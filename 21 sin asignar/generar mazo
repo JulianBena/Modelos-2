@@ -1,0 +1,13 @@
+from random import *
+def generar_mazo():
+    return sample([(x,y)for x in [1,2,3]for y in['p','t','d']],9)
+
+def jugar(mazo):
+    if mazo!=[]:
+        print mazo[:2]
+        return jugar(mazo[3:])
+    
+def main():
+    m=generar_mazo()
+    j=jugar(m)
+if __name__ == "__main__":main()
