@@ -4,29 +4,29 @@ from random import sample
 def contar(lista):
     if(len(lista)<=0):
         return 0
-    if(contador(lista)>11):
-        return contador(lista)
+    if(verificar(lista)>11):
+        return verificar(lista)
     else:
         for i in lista:
             if i[0] == 'J' or  i[0] == 'K' or  i[0] == 'Q':
                 return 10+contar(lista[1:])
-            elif i[0] == 'A':            
-                return contador(lista)+10
+            elif i[0] == 'A':
+                return verificar(lista)+10
             else:
                 return i[0]+contar(lista[1:])
 #-------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------
-def contador(lista):
+def verificar(lista):
     if(len(lista)==0):
         return 0
     else:
         for i in lista:
             if(i[0]=='J' or i[0]=='Q' or i[0]=='K'):
-                return contador(lista[1:])+10
+                return verificar(lista[1:])+10
             if(i[0]=='A'):
-                return contador(lista[1:])+1
+                return verificar(lista[1:])+1
             else:
-                return contador(lista[1:])+i[0]
+                return verificar(lista[1:])+i[0]
 #-------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------
 def creadorbaraja():
@@ -40,12 +40,12 @@ def juego(listaJ, listaC, lista, JC):
     else:
         print("jugador: ",contar(listaJ))
         print(listaJ)
-        print("Casa: ",contar(listaC))
-        print(listaC)
+        print("Casa: ")
+        print(listaC[0])
         print("")
         print("")
         if(JC==True and contar(listaJ)<=21):
-            if(input("Desea otra carta: ")!='N'):
+            if(input("Desea otra carta: ")!='no'):
                 print("")
                 return repartirIni(listaJ,listaC,lista, JC)
     if(contar(listaC)<contar(listaJ) and contar(listaJ)<=21):
@@ -70,7 +70,7 @@ def juego(listaJ, listaC, lista, JC):
 def repartirIni(listaJ, listaC, lista, JC):
     if (len(lista)==52):#reparte la mano inicial del jugador y de la casa
         return juego(listaJ+[lista[0]]+[lista[1]],listaC+[lista[2]]+[lista[3]],lista[4:],JC)
-    elif(len(lista)!=52 and JC==True):#suma cartas al jugador 
+    elif(len(lista)!=52 and JC==True):#suma cartas al jugador
         return juego(listaJ+[lista[0]],listaC,lista[2:],JC)
     elif(len(lista)!=52 and JC==False):#suma cartas a la casa
         return juego(listaJ,listaC+[lista[0]],lista[2:],JC)
