@@ -1,15 +1,16 @@
 from random import sample
 #-------------------------------------------------------------------------------------------------------------------------------
 def correccion(lista):
-    if(lista[0]=='J' or lista[0]=='Q' or lista[0]=='K'):
-        return (10+correcion(lista),lista[1:])
-    elif(lista[0]=='A'):
+    if(len(lista)<=0):
+        if(lista[0]=='J' or lista[0]=='Q' or lista[0]=='K'):
+            return (10+correcion(lista[1:])
+        elif(lista[0]=='A'):
             if(valor>11):
-               return (1+correcion(lista),lista[1:])
+                return 1+correcion(lista[:1])
             else:
-                return (10+correcion(lista),lista[1:])
-    else:
-        return (lista[0]+correcion(lista),lista[1:])
+                return 10+correcion(lista[1:])
+        else:
+            return lista[0]+correcion(lista[1:])
 #--------------------------------------------------------------------------------------------------------------------------------
 def contar(lista):
     if(len(lista)<=0):
