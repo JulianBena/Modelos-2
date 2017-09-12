@@ -21,7 +21,7 @@ else (converdec((div a 10)) * 2 ) +(mod a 10)
 capicua::Int->Bool
 capicua a 
  | a > 0 && a < 10 = True
- | a > 9999 = error "argumento mayor que 9999"
- | a > 999 = ((div a 1000) == (mod a 10)) && ((mod (div a 100) 10) == (div (mod a 100) 10))
- | a > 99 = (a==(((mod a 10)*10^2)+((mod (div a 10) 10)*10)+(mod (div a 100) 10)))
  | a > 9 && a <= 99 = ((mod a 11) == 0)
+ | a > 99 = (a==(((mod a 10)*10^2)+((mod (div a 10) 10)*10)+(mod (div a 100) 10)))
+ | a > 999 = ((div a 1000) == (mod a 10)) && ((mod (div a 100) 10) == (div (mod a 100) 10))
+ | a > 9999 = error "argumento mayor que 9999"
