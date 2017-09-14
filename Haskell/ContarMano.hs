@@ -13,6 +13,7 @@ contarMano ((a,b):xs)
  | a == 'J' = 10 + contarMano(xs)
  | a == 'K' = 10 + contarMano(xs)
  | a == 'Q' = 10 + contarMano(xs)
+ | otherwise = 0 + contarMano(xs)
 
 buscarAs::[(Char,Char)]->Bool
 buscarAs [ ] = False
