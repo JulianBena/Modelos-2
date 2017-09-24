@@ -1,6 +1,4 @@
 -- laberinto
-import Data.Array
-
 type Fila = [(Char,Int,Int)]
 
 type ElementoFila = [Char]
