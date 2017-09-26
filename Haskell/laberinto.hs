@@ -60,7 +60,3 @@ buscarEnFilas (x:xs) signo
 
 buscarInicio::Matriz->(Char,Int,Int)
 buscarInicio [] = ('0',0,0)
-
-
-mostrarLab::MatrizElementos
-mostrarLab = [elemento fila1,elemento fila2,elemento fila3,elemento fila4,elemento fila5]
