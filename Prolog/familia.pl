@@ -3,16 +3,16 @@ padrede("pablo","juan").
 padrede("pablo","marcela").
 padrede("carlos","debora").
 padrede("maria","carlos").
-padrede("alejandras","debora").
+padrede("alejandra","debora").
+padrede("felipe","alejandra").
+padrede("felipe","andres").
 
-
-
-hijode(A,B) :- padrede(B,A).
-abuelode(A,B) :- padrede(A,C), padrede(C,B).
-hermanode(A,B) :- padrede(C,A), padrede(C,B), A \== B.
-familiarde(A,B) :- padrede(A,B).
-familiarde(A,B) :- abuelode(A,B).
-familiarde(A,B) :- hermanode(A,B).
+hijode(A,B)Â :-Â padrede(B,A).
+abuelode(A,B)Â :-Â padrede(A,C),Â padrede(C,B).
+hermanode(A,B)Â :-Â padrede(C,A),Â padrede(C,B),Â AÂ \==Â B.
+familiarde(A,B)Â :-Â padrede(A,B).
+familiarde(A,B)Â :-Â abuelode(A,B).
+familiarde(A,B)Â :-Â hermanode(A,B).
 
 tiode(A,B):- padrede(X,B),hermanode(X,A).
 sobrinode(A,B):-tiode(B,A).
