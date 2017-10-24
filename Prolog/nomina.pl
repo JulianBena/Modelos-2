@@ -1,6 +1,6 @@
 tipoContrato("alejandro","TCO","asistente").
-tipoContrato("pedro","HC","titulares").
-tipoContrato("juan","HcH","asistente").
+tipoContrato("pedro","HC","titular").
+tipoContrato("juan","HCH","asistente").
 tipoContrato("miguel","MTO","titular").
 tipoContrato("ana","planta","asistente").
 
@@ -28,8 +28,5 @@ bonificacion("HC",0.1).
 bonificacion("HCH",0).
 bonificacion("planta",0.25).
 
-prueba(A,Y):-horas(A,X),semestre(Q,Z),Y is (X*Q).
-
-sueldo(X,Y,Z):-tipoContrato(X,A,B),horas(A,C),pagoPersonal(A,B,D),semestre(Q,Y),Z is (C*D*Q).
-
+sueldo(X,Y,Z):-tipoContrato(X,A,B),horas(A,C),pagoPersonal(A,B,D),semestre(Q,Y),bonificacion(A,E),Z is (C*D*Q)*(1+E).
 
