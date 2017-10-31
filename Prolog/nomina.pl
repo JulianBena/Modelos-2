@@ -28,5 +28,10 @@ bonificacion("HC",0.1).
 bonificacion("HCH",0).
 bonificacion("planta",0.25).
 
+suma([],0).
+suma([X|Xs], S):- suma(Xs, S2), S is S2 + X.
+
 sueldo(X,Y,Z):-tipoContrato(X,A,B),horas(A,C),pagoPersonal(A,B,D),semestre(Q,Y),bonificacion(A,E),Z is (C*D*Q)*(1+E).
+
+nomina(Semestre,Total):-findall(Result,(sueldo(_,Semestre,Result)),Z), suma(Z,Total).
 
