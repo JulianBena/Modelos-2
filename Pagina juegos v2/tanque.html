@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function(){
+
+            document.onkeydown = chars;
+        }
+        var leftRight = 0;
+        var topDown = 0;
+        function chars(evento){
+            if(window.event){
+                evento =window.event;
+            }
+            document.getElementById("string").innerHTML = evento.keyCode;
+            caracteres(evento.keyCode);
+        }
+        function caracteres(chars){
+            if(chars == 39){
+                leftRight+=10;
+                document.getElementById("tanque").style.marginLeft = leftRight+"px";
+            }
+            if(chars == 37){
+                leftRight+=-10;
+                document.getElementById("tanque").style.marginLeft = leftRight+"px";
+            }
+            if(chars == 38){
+                topDown+=-10;
+                document.getElementById("tanque").style.marginTop = topDown+"px";
+            }
+            if(chars == 40){
+                topDown+=10;
+                document.getElementById("tanque").style.marginTop = topDown+"px";
+            }
+        }
+    </script>
+</head>
+<body>
+   <span id = "string"></span> 
+   <img id="tanque" src="tanque2.png">
+</body>
+</html>
