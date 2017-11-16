@@ -1,0 +1,52 @@
+body {
+	background:url('imagenes/space1.png');
+	background-color:#000000;
+}
+
+h1, h3{
+	color:#ffffff;
+}
+aside {
+	float: right;
+	clear: none;
+	margin:2em;
+	padding:1em;
+	text-align: center;
+}
+
+ul {
+	color:#ffffff;
+	text-align: left;
+}
+
+section {
+	background-color:#333322;
+	border:2px solid;
+	border-color:#ffffff;
+	border-radius:15px;
+	margin:2em;
+	padding:1em;
+	text-align: center;
+}
+
+canvas {
+	background:url('imagenes/space1.png');
+	color:#ffffff;
+	border:2px solid;
+	border-color:#ffffff;
+	border-radius:15px;
+}
+
+p {
+	padding:0.1em;
+	color:#ffffff;
+}
+
+button {
+	margin:0.3em;
+	color:#ff0000;
+}
+
+#ship, #asteroid, #explosion {
+	display:none;
+}
