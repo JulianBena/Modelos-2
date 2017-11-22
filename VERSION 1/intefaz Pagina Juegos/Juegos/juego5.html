@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Juego llorona">
+		<meta name="keywords" content="canvas colisiones jquery ajax">
+		<meta name="author" content="Alejandro Daza">
+		<title>La leyenda de la llorona</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/estilo_j5/default.css" media="screen">
+		<script src="js/js_j5/jquery-1.11.0.min.js" language="JavaScript1.2"></script>
+		<script src="js/js_j5/quica.js" language="JavaScript1.2"></script>
+		<script src="js/js_j5/calaca.js" language="JavaScript1.2"></script>
+		<script src="js/js_j5/script.js" language="JavaScript1.2"></script>
+
+		
+		
+	</head>
+	<body>
+		<section>
+			<canvas id="mi_canvas" width="640" height="480">
+				Tu navegador no es compatible
+			</canvas>			
+		</section>
+		<section>
+			<div id="popup" style="display: none;">
+				<div class="content-popup">
+					<div class="close"><a href="#" id="close"><img src="img/img_j5/close.png"/></a></div>
+					<div>
+					   <h2>Teclas de juego</h2>
+					   <img src="img/img_j5/teclado.png"/>
+					   <h2>Creditos</h2>
+					   <p>Alejandro Paolo Daza Corredor</p>
+						<p>UNIR</p>
+						<p>Computación en el Cliente</p>
+					</div>
+				</div>
+			</div>
+			<h1>La Llorona</h1>
+			<button id="instrucciones">Ver Instrucciones</button><br>
+			<button id="iniciar">Iniciar</button>
+		</section>
+		<audio id="pierde">
+			<source src="sonidos/son_j5/pierde_vida.ogg" type="audio/ogg">
+			<source src="sonidos/son_j5/pierde_vida.mp3" type="audio/mpeg">
+			<source src="sonidos/son_j5/pierde_vida.wav" type="audio/wav">
+			Tu navegador no es compatible
+		</audio>
+		
+		<img id="abajo" src="img/img_j5/kika.png"/>
+		<img id="arriba" src="img/img_j5/kika2.png"/>
+		<img id="salto" src="img/img_j5/kika.png"/>
+		<img id="sentado" src="img/img_j5/kika3.png"/>
+		<img id="calaca_1" src="img/img_j5/calaca_child.png"/>
+		<img id="calaca_2" src="img/img_j5/calaca_girl.png"/>
+		
+		
+	</body>
+</html>

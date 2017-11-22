@@ -1,0 +1,9 @@
+body{
+   
+    background: Yellow no-repeat fixed center center;
+        background-size: cover;
+    font-size: 2em;
+    
+}
+
+#canvas { width: 600px; margin: 0 auto}

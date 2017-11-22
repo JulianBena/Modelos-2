@@ -1,0 +1,13 @@
+body{
+   
+    background:url(../../img/img_j1/fondo.jpg) no-repeat fixed center center;
+        background-size: cover;
+    font-size: 2em;
+    
+}
+
+#bloque_juego { 
+	float: left;
+	width: 1000px; 
+	margin: 0 auto
+}
