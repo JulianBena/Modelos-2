@@ -1,6 +1,9 @@
 from random import sample
 #-------------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------------
+#la funcion contar recibe el valor de la suma de las cartas en mano el cual le es entregado por la funcion verificar
+#luego mira si alguna de estas cartas es un as y en caso de ser posible lo hace valer 11 sumando 10 al resultado entregado por 
+#la funcion verificar
 def contar(lista):
     if(len(lista)<=0):
         return 0
@@ -16,6 +19,7 @@ def contar(lista):
                 return i[0]+contar(lista[1:])
 #-------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------
+#la funcion verificar entrega la suma de las cartas en mano y si hay un as lo toma en un comienzo como 1
 def verificar(lista):
     if(len(lista)==0):
         return 0
@@ -29,10 +33,14 @@ def verificar(lista):
                 return verificar(lista[1:])+i[0]
 #-------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------
+#sample generara parejas (x,y) dandole valores sin repetir y de forma aleatoria hasta entregar una lista del tamaño que se
+#especifique al final como en este caso es 52 por las 52 cartas de un mazo 
 def creadorbaraja():
     return sample([(x,y)for x in ['A',2,3,4,5,6,7,8,9,10,'J','Q','K']for y in ['DIAMANTES','TREBOLES','PICAS','CORAZONES']], 52)
 #-------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------------------
+#juego recibe 4 parametros listaJ=lista jugador listaC=lista casa lista=creador de barajas JC=boleano(este bool se usa para saber
+#si el jugador desea otra carta
 def juego(listaJ, listaC, lista, JC):
     if(len(listaJ)==0 and len(listaC)==0):
         repartirIni(listaJ, listaC, lista, JC)
